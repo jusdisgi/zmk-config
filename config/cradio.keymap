@@ -22,13 +22,13 @@
         };
     };
 
-    //conditional_layers {
-    //    compatible = "zmk,conditional-layers";
-    //    tri_layer {
-    //        if-layers = <1 2>;
-    //        then-layer = <3>;
-    //    };
-    //};
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <3 5>;
+            then-layer = <6>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -36,13 +36,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │ ' "      │
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
+            &kp Q      &kp W      &lt 4 F    &lt 3 P    &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │ O        │
             HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
-            &kp Z      &lt 3 X    &lt 2 C    &lt 1 D    &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
+            &lt 5 Z    &kp X      &lt 2 C    &lt 1 D    &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &kp TAB     &kp ENTER     &kp SPACE  &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -59,7 +59,7 @@
             &kp DEL    &kp LGUI  &caps_word   &none      &none         &kp FSLH   &kp N4     &kp N5     &kp N6     &kp MINUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │This Layer│  0       │   │   *      │ 1        │ 2        │ 3        │  +       │
-           &kp LALT   &kp LCTRL  &kp LSHFT   &trans     &none         &kp ASTRK   &kp N1     &kp N2     &kp N3     &kp PLUS
+           &kp LALT   &kp LCTRL  &kp LSHFT   &none      &none         &kp ASTRK   &kp N1     &kp N2     &kp N3     &kp PLUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp ESC    &kp EQUAL       &kp N0     &kp DOT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -69,33 +69,84 @@
         sym_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │  ^       │  (       │  )       │  \       │  ~       │
-            &none      &none      &none     &none       &none          &kp CARET  &kp LPAR   &kp RPAR   &kp BSLH  &kp TILDE
+        //│          │          │          │          │          │   │  ^       │  -       │  =       │  \       │  ~       │
+            &none      &none      &none     &none       &none          &kp CARET  &kp MINUS &kp EQUAL   &kp BSLH   &kp TILDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  :       │  -       │  =       │  +       │  ;       │
-            &none      &none     &none      &none      &none          &kp COLON  &kp MINUS  &kp EQUAL  &kp PLUS   &kp SEMI
+        //│          │          │          │          │          │   │  :       │  (       │  )       │  +       │  ;       │
+            &none      &none     &none      &none       &none          &kp COLON  &kp LPAR   &kp RPAR   &kp PLUS   &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │This Layer│          │          │   │  &       │  !      │  @        │  #       │          │
-            &none      &none      &trans     &trans     &trans         &kp AMPS   &kp EXCL  &kp AT     &kp HASH    &trans
+        //│          │          │This Layer│ DELETE   │          │   │  &       │  !       │  @       │  #       │  `       │
+            &none      &none      &none      &kp DEL     &none         &kp AMPS   &kp EXCL   &kp AT     &kp HASH   &kp GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp LBKT    &kp RBKT      &kp LBRC   &kp RBRC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        util_layer {
+        nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│          │          │Cntxt Menu│This Layer│          │   │ Page Up  │ Home     │    UP    │ End      │ Page Up  │
+           &none      &none      &kp K_APP    &none     &none         &kp PG_UP   &kp HOME    &kp UP    &kp END    &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp A     &trans     &trans    &bootloader
+        //│          │          │          │          │          │   │ Page Down│  LEFT    │   DOWN   │  RIGHT   │ Page Down│
+           &none      &none       &none       &none     &none         &kp PG_DN   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+           &none      &none       &none       &none     &none          &none      &none       &none       &none     &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                              &none     &none          &kp K_APP  &none 
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+        //│          │          │This Layer│CAPS WORD │          │   │               │               │               │               │               │
+           &none      &none       &none     &caps_word  &none         &mmv SCRL_UP     &mmv SCRL_LEFT  &mmv MOVE_UP   &mmv SCRL_RIGHT  &mmv SCRL_UP
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+        //│          │          │          │          │          │   │               │               │               │               │               │
+           &none      &none       &none       &none     &none         &mmv SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mmv SCRL_DOWN
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+        //│          │          │          │          │          │   │               │               │               │               │               │
+           &none      &none       &none       &none     &none          &none           &none           &none           &none              &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                              &none     &mmv MCLK     &mmv LCLK  &mmv RCLK 
+        //                                 ╰──────────┴──────────╯   ╰───────────────┴───────────────╯
+            >;
+        };
+
+        fun_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │Play/Pause│          │          │          │          │
+           &kp F1      &kp F2     &kp F3     &kp F4     &kp F5         &kp C_PP    &kp F9    &kp F10    &kp F11    &kp F12
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │ Volume + │          │          │          │          │
+           &none      &none       &none       &none     &none        &kp C_VOL_UP  &kp F5    &kp F6     &kp F7     &kp F8
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│This Layer│          │          │          │          │   │ Volume - │          │          │          │          │
+           &none      &kp LALT   &kp LCTRL  &kp LSHFT   &none        &kp C_VOL_DN  &kp F1    &kp F2     &kp F3     &kp F4   
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                              &none     &kp ESC       &kp C_MUTE  &kp PSCRN
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        util_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+        //│          │          │          │This Layer│          │   │          │              │              │              │              │
+           &none      &none       &none       &none     &none          &none      &none           &none           &none         &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        //│          │          │          │          │          │   │          │ Big Lappy    │ Work Lappy   │ Tiny Lappy   │   Phone      │
+           &none      &none       &none       &none     &none          &none      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        //│This Layer│          │          │          │          │   │          │ USB/BLE      │              │              │Clear Profile │
+           &none      &none       &none       &none     &none          &none      &out OUT_TOG    &none           &none        &bt BT_CLR
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+                                              &none     &none         &bt BT_PRV &bt BT_NXT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
