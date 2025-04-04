@@ -26,7 +26,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        tri_layer {
+        util_layer {
             if-layers = <3 5>;
             then-layer = <6>;
         };
@@ -38,7 +38,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │ ' "      │
-            &kp Q      &kp W      &lt 4 F    &lt 3 P    &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
+            &lt 6 Q    &kp W      &lt 4 F    &lt 3 P    &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │ O        │
             HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,        O)
