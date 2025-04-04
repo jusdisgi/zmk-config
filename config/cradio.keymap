@@ -24,13 +24,13 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        util_layer {
-            if-layers = <3 5>;
-            then-layer = <6>;
-        };
-    };
+    //conditional_layers {
+    //    compatible = "zmk,conditional-layers";
+    //    util_layer {
+    //        if-layers = <3 5>;
+    //        then-layer = <6>;
+    //    };
+    //};
 
     keymap {
         compatible = "zmk,keymap";
