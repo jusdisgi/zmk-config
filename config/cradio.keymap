@@ -17,20 +17,20 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
     };
 
-    //conditional_layers {
-    //    compatible = "zmk,conditional-layers";
-    //    util_layer {
-    //        if-layers = <3 5>;
-    //        then-layer = <6>;
-    //    };
-    //};
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        util_layer {
+            if-layers = <3 5>;
+            then-layer = <6>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -38,7 +38,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │ ' "      │
-            &lt 6 Q    &kp W      &lt 4 F    &lt 3 P    &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
+            &kp Q      &kp W      &lt 4 F    &lt 3 P    &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │ O        │
             HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,        O)
@@ -95,7 +95,7 @@
            &none      &none       &none       &none     &none         &kp PG_DN   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-           &none      &none       &none       &none     &none          &none      &none       &none       &none     &none
+           &lt 5      &none       &none       &none     &none          &none      &none       &none       &none     &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &none     &none          &kp K_APP  &none 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -123,7 +123,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │Play/Pause│          │          │          │          │
-           &kp F1      &kp F2     &kp F3     &kp F4     &kp F5         &kp C_PP    &kp F9    &kp F10    &kp F11    &kp F12
+           &kp F1      &kp F2     &kp F3     &lt 3 F4   &kp F5         &kp C_PP    &kp F9    &kp F10    &kp F11    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ Volume + │          │          │          │          │
            &none      &none       &none       &none     &none        &kp C_VOL_UP  &kp F5    &kp F6     &kp F7     &kp F8
