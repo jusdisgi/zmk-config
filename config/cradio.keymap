@@ -22,7 +22,7 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
-        btht: hold_tap {
+        btht: bluetooth_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -33,16 +33,16 @@
         };
     };
     macros {
-        btsel: btsel {
+        btsel: bluetooth_select {
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings
-                = <&macro_tap &out OUT_BLE>
-                , <&macro_param_1to1>
+                = <&macro_param_1to1>
                 , <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>
+                , <&macro_tap &out OUT_BLE>
                 ;
         };
-        btdis: btdis {
+        btdis: bluetooth_disconnect {
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings
