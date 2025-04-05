@@ -170,7 +170,7 @@
            &none      &none       &none       &none     &none          &none      &bt BT_SEL 4   &none           &none         &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         //│          │          │          │          │          │   │          │ Big Lappy    │ Work Lappy   │ Tiny Lappy   │   Phone      │
-           &none      &none       &none       &none     &none          &none      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &btht 3 3
+           &none      &none       &none       &none     &none          &none      &btht 0 0      &btht 1 1     &bt BT_SEL 2   &btht 3 3
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         //│This Layer│          │          │          │          │   │          │ USB/BLE      │              │              │Clear Profile │
            &none      &none       &none       &none     &none          &none      &out OUT_TOG    &none           &none        &bt BT_CLR
