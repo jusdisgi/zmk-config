@@ -126,10 +126,10 @@
            &kp F1      &kp F2     &kp F3     &lt 3 F4   &kp F5         &kp C_PP    &kp F9    &kp F10    &kp F11    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ Volume + │          │          │          │          │
-           &none      &none       &none       &none     &none        &kp C_VOL_UP  &kp F5    &kp F6     &kp F7     &kp F8
+           &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT   &none        &kp C_VOL_UP  &kp F5    &kp F6     &kp F7     &kp F8
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│This Layer│          │          │          │          │   │ Volume - │          │          │          │          │
-           &none      &kp LALT   &kp LCTRL  &kp LSHFT   &none        &kp C_VOL_DN  &kp F1    &kp F2     &kp F3     &kp F4   
+        //│This Layer│  Undo    │  Cut     │  Copy    │  Paste   │   │ Volume - │          │          │          │          │
+           &none      &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)    &kp C_VOL_DN  &kp F1    &kp F2     &kp F3     &kp F4   
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &none     &kp ESC       &kp C_MUTE  &kp PSCRN
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
