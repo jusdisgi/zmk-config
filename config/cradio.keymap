@@ -50,6 +50,24 @@
                 ;
         };
     };
+    combos {
+        compatible = "zmk,combos";
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&caps_word>;
+        }
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp DEL>;
+        }
+        combo_kapp {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp K_APP>;
+        }
+    }
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -104,8 +122,8 @@
         //│          │          │          │          │          │   │  :       │  (       │  )       │  +       │  ;       │
             &none      &none     &none      &none       &none          &kp COLON  &kp LPAR   &kp RPAR   &kp PLUS   &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │This Layer│ DELETE   │          │   │  &       │  !       │  @       │  #       │  `       │
-            &none      &none      &none      &kp DEL     &none         &kp AMPS   &kp EXCL   &kp AT     &kp HASH   &kp GRAVE
+        //│          │          │This Layer│ Not Del  │          │   │  &       │  !       │  @       │  #       │  `       │ Delete collided with num_layer LSHIFT
+            &none      &none      &none      &none      &none         &kp AMPS   &kp EXCL   &kp AT     &kp HASH   &kp GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp LBKT    &kp RBKT      &kp LBRC   &kp RBRC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -115,8 +133,8 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │Cntxt Menu│This Layer│          │   │ Page Up  │ Home     │    UP    │ End      │ Page Up  │
-           &none      &none      &kp K_APP    &none     &none         &kp PG_UP   &kp HOME    &kp UP    &kp END    &kp PG_UP
+        //│          │          │          │This Layer│          │   │ Page Up  │ Home     │    UP    │ End      │ Page Up  │
+           &none      &none       &none       &none     &none         &kp PG_UP   &kp HOME    &kp UP    &kp END    &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ Page Down│  LEFT    │   DOWN   │  RIGHT   │ Page Down│
            &none      &none       &none       &none     &none         &kp PG_DN   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN 
@@ -132,8 +150,8 @@
         mouse_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        //│          │          │This Layer│CAPS WORD │          │   │               │               │               │               │               │
-           &none      &none       &none     &caps_word  &none         &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT  &msc SCRL_UP
+        //│          │          │This Layer│          │          │   │               │               │               │               │               │
+           &none      &none       &none       &none     &none         &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT  &msc SCRL_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         //│          │          │          │          │          │   │               │               │               │               │               │
            &none      &none       &none       &none     &none         &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &msc SCRL_DOWN
