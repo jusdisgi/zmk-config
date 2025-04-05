@@ -22,6 +22,34 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+        btht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <2000>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&btdis>, <&btsel>;
+        };
+    };
+    macros {
+        btsel: btsel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &out OUT_BLE>
+                , <&macro_param_1to1>
+                , <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>
+                ;
+        };
+        btdis: btdis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_tap &bt BT_DISC MACRO_PLACEHOLDER>
+                ;
+        };
     };
 
     conditional_layers {
@@ -143,7 +171,7 @@
            &none      &none       &none       &none     &none          &none      &bt BT_SEL 4   &none           &none         &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         //│          │          │          │          │          │   │          │ Big Lappy    │ Work Lappy   │ Tiny Lappy   │   Phone      │
-           &none      &none       &none       &none     &none          &none      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+           &none      &none       &none       &none     &none          &none      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &btht 3 3
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         //│This Layer│          │          │          │          │   │          │ USB/BLE      │              │              │Clear Profile │
            &none      &none       &none       &none     &none          &none      &out OUT_TOG    &none           &none        &bt BT_CLR
