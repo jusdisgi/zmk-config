@@ -33,7 +33,7 @@
     };
     macros {
         btsel: bluetooth_select {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
@@ -42,7 +42,7 @@
                 ;
         };
         btdis: bluetooth_disconnect {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
