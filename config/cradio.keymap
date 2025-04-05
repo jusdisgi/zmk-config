@@ -27,7 +27,6 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <2000>;
-            quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&btdis>, <&btsel>;
         };
@@ -37,7 +36,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
+                = <&macro_param_1to2>
                 , <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>
                 , <&macro_tap &out OUT_BLE>
                 ;
@@ -46,7 +45,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
+                = <&macro_param_1to2>
                 , <&macro_tap &bt BT_DISC MACRO_PLACEHOLDER>
                 ;
         };
