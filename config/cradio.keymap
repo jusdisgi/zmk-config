@@ -75,12 +75,12 @@
         };
         combo_navlock {
             timeout-ms = <50>;
-            key-positions = <30 31>;
+            key-positions = <26 27>;
             bindings = <&to 3>;
         };
         combo_mouselock {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <25 26>;
             bindings = <&to 4>;
         };
     };
