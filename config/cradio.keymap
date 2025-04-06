@@ -30,6 +30,12 @@
             require-prior-idle-ms = <100>;
             bindings = <&btdis>, <&btsel>;
         };
+        tdto0: tap_dance_to_layer_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&to 0>;
+        };
     };
     macros {
         btsel: bluetooth_select {
@@ -69,7 +75,7 @@
         };
         combo_navlock {
             timeout-ms = <50>;
-            key-positions = <28 29>;
+            key-positions = <30 31>;
             bindings = <&to 3>;
         };
         combo_mouselock {
@@ -149,8 +155,8 @@
         //│          │          │          │          │          │   │ Page Down│  LEFT    │   DOWN   │  RIGHT   │ Page Down│
            &none      &none       &none       &none     &none         &kp PG_DN   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ Home     │ Insert   │ End      │          │
-           &mo 5      &none       &none       &none     &none          &none      &kp HOME   &kp INS    &kp END      &to 0
+        //│          │          │          │          │          │   │          │ Home     │ Insert   │ End      │Dbl tap L0│
+           &mo 5      &none       &none       &none     &none          &none      &kp HOME   &kp INS    &kp END     &tdto0
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &kp TAB     &kp ENTER     &kp SPACE  &kp BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -166,8 +172,8 @@
         //│          │          │          │          │          │   │               │               │               │               │               │
            &none      &none       &none       &none     &none         &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &msc SCRL_DOWN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        //│          │          │          │          │          │   │               │               │               │               │               │
-           &none      &none       &none       &none     &none          &none           &none           &none           &none              &to 0
+        //│          │          │          │          │          │   │               │               │               │               │  Dbl tap L0   │
+           &none      &none       &none       &none     &none          &none           &none           &none           &none              &tdto0
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                             &kp ENTER   &mkp MCLK     &mkp LCLK        &mkp RCLK 
         //                                 ╰──────────┴──────────╯   ╰───────────────┴───────────────╯
