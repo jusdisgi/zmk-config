@@ -67,6 +67,15 @@
             key-positions = <0 1>;
             bindings = <&kp K_APP>;
         };
+        combo_navlock {
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&to 3>;
+        };
+        combo_mouselock {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+        };
     };
 
     conditional_layers {
