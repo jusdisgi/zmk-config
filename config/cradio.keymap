@@ -149,16 +149,16 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │This Layer│          │   │ Page Up  │ Home     │    UP    │ End      │ Page Up  │
-           &none      &none       &none       &none     &none         &kp PG_UP   &kp HOME    &kp UP    &kp END    &kp PG_UP
+        //│          │          │ Shift    │This Layer│          │   │ Page Up  │ Home     │    UP    │ End      │ Page Up  │
+           &none      &none       &kp LSHFT  &none      &none         &kp PG_UP   &kp HOME    &kp UP    &kp END    &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ Page Down│  LEFT    │   DOWN   │  RIGHT   │ Page Down│
            &none      &none       &none       &none     &none         &kp PG_DN   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ Home     │ Insert   │ End      │Dbl tap L0│
-           &mo 5      &none       &none       &none     &none          &none      &kp HOME   &kp INS    &kp END     &tdto0
+        //│          │          │          │          │          │   │ Alt      │ Home     │ Insert   │ End      │Dbl tap L0│
+           &mo 5      &none       &none       &none     &kp SPACE      &kp RALT   &kp RALT   &kp INS    &kp END    &tdto0
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp TAB     &kp ENTER     &kp SPACE  &kp BSPC 
+                                            &kp TAB     &kp ENTER     &kp RSHFT  &kp RCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -166,14 +166,14 @@
         mouse_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        //│          │          │This Layer│          │          │   │               │               │               │               │               │
-           &none      &none       &none       &none     &none         &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT  &msc SCRL_UP
+        //│          │          │This Layer│ Control  │          │   │               │               │               │               │               │
+           &none      &none       &none      &kp LCTRL  &none         &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT  &msc SCRL_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        //│          │          │          │          │          │   │               │               │               │               │               │
-           &none      &none       &none       &none     &none         &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &msc SCRL_DOWN
+        //│          │          │          │  Shift   │          │   │               │               │               │               │               │
+           &none      &none       &none      &kp LSHFT  &none         &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &msc SCRL_DOWN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        //│          │          │          │          │          │   │               │               │               │               │  Dbl tap L0   │
-           &none      &none       &none       &none     &none          &none           &none           &none           &none              &tdto0
+        //│          │          │          │  Alt     │          │   │               │ Control       │ Shift         │  Alt          │  Dbl tap L0   │
+           &none      &none       &none      &kp LALT   &none          &none           &kp RCTRL       &kp RSHFT       &kp RALT          &tdto0
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                             &kp ENTER   &mkp MCLK     &mkp LCLK        &mkp RCLK 
         //                                 ╰──────────┴──────────╯   ╰───────────────┴───────────────╯
