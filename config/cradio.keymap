@@ -78,6 +78,7 @@
             key-positions = <26 27>;
             bindings = <&to 3>;
         };
+        //This one is happening by accident a fair bit
         combo_mouselock {
             timeout-ms = <50>;
             key-positions = <25 26>;
