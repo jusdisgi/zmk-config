@@ -17,8 +17,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <120>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
@@ -59,29 +59,29 @@
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <2 3>;
             bindings = <&caps_word>;
         };
         combo_del {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <6 7>;
             bindings = <&kp DEL>;
         };
         combo_kapp {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <0 1>;
             bindings = <&kp K_APP>;
         };
         combo_navlock {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
+            timeout-ms = <30>;
+            key-positions = <26 28>;
             bindings = <&to 3>;
         };
         //This one is happening by accident a fair bit
         combo_mouselock {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
+            timeout-ms = <30>;
+            key-positions = <25 27>;
             bindings = <&to 4>;
         };
     };
