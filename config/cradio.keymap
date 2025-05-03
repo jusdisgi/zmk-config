@@ -30,13 +30,13 @@
             require-prior-idle-ms = <100>;
             bindings = <&btdis>, <&btsel>;
         };
-        tdshto0: tdshto0 {
+        tdshto0: tapdance_shift_tolayer0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "TD Shift/L0";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&to 0>;
         };
-        tdeqto0: tdplto0 {
+        tdplto0: tapdance_plus_tolayer0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "TD +/L0";
             #binding-cells = <0>;
