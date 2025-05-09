@@ -67,7 +67,7 @@
         combo_minimize {
             timeout-ms = <30>;
             key-positionss = <0 4>;
-            bindings = <kp LG(DOWN)>;
+            bindings = <&kp LG(DOWN)>;
         }
         combo_esc {
             timeout-ms = <30>;
