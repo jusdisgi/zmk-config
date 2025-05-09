@@ -68,7 +68,7 @@
             timeout-ms = <30>;
             key-positionss = <0 4>;
             bindings = <&kp LG(DOWN)>;
-        }
+        };
         combo_esc {
             timeout-ms = <30>;
             key-positions = <0 1>;
